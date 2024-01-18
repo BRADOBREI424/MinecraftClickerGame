@@ -23,41 +23,40 @@ public class Money : MonoBehaviour
 
     public void GetMoney()
     {
-        if(BlockLink.DestroyedBlock == "Coblestone")
-        {
-            MoneyCount += 1 * MultipleMoney;
-        }
-        else if(BlockLink.DestroyedBlock == "Coper")
-        {
-            MoneyCount += 3 * MultipleMoney;
-        }
-        else if(BlockLink.DestroyedBlock == "Gold")
-        {
-            MoneyCount += 5 * MultipleMoney;
-        }
-        else if(BlockLink.DestroyedBlock == "Diamond")
-        {
-            MoneyCount += 12 * MultipleMoney;
-        }
-        else if(BlockLink.DestroyedBlock == "Ruby")
-        {
-            MoneyCount += 15 * MultipleMoney;
-        }
-        else if(BlockLink.DestroyedBlock == "Emerald")
-        {
-            MoneyCount += 20 * MultipleMoney;
-        }
-        MoneyCountUI.text = Convert.ToString(MoneyCount);
+            if(BlockLink.DestroyedBlock == "Coblestone")
+            {
+                MoneyCount += 1 * MultipleMoney;
+            }
+            else if(BlockLink.DestroyedBlock == "Coper")
+            {
+                MoneyCount += 3 * MultipleMoney;
+            }
+            else if(BlockLink.DestroyedBlock == "Gold")
+            {
+                MoneyCount += 5 * MultipleMoney;
+            }
+            else if(BlockLink.DestroyedBlock == "Diamond")
+            {
+                MoneyCount += 12 * MultipleMoney;
+            }
+            else if(BlockLink.DestroyedBlock == "Ruby")
+            {
+                MoneyCount += 15 * MultipleMoney;
+            }
+            else if(BlockLink.DestroyedBlock == "Emerald")
+            {
+                MoneyCount += 20 * MultipleMoney;
+            }
+            MoneyCountUI.text = Convert.ToString(MoneyCount);
     }
 
     IEnumerator UpdateMoneyEventTick()
     {
         while(true)
         {
-            MoneyCount += Bonus;
-            MoneyCountUI.text = Convert.ToString(MoneyCount);
-            yield return new WaitForSeconds(1);
+                MoneyCount += Bonus;
+                MoneyCountUI.text = Convert.ToString(MoneyCount);
+                yield return new WaitForSeconds(1);
         }
-        
     }
 }

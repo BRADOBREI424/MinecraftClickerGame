@@ -23,10 +23,9 @@ public class BuyPet : MonoBehaviour
         GetPet(PetName);
         if(Money.MoneyCount >= float.Parse(Cost.text))
         {
+            Money.MoneyCount -= float.Parse(Cost.text);
             int CurentLevel = int.Parse(Level.text) + 1;
             Level.text = Convert.ToString(CurentLevel);
-            Money.MoneyCount -= float.Parse(Cost.text);
-            Money.Bonus += float.Parse(Bonus.text);
             SetPetStats(PetName);
         }
     }
@@ -67,6 +66,7 @@ public class BuyPet : MonoBehaviour
             GameObject.Find($"{PetName}/BuyPet").GetComponent<Button>().enabled = false;
             GameObject.Find($"{PetName}/BuyPetText").GetComponent<TMP_Text>().text = "МАКС. УРОВЕНЬ";
         }
-
+        
+        Money.Bonus += float.Parse(Bonus.text);
     }
 }

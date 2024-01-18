@@ -9,6 +9,7 @@ public class PetBonuses : MonoBehaviour
     float[] CreeperUpgrades = {35,40,45};
     float[] EndermanUpgrades = {45,50,55};
     private Dictionary<string, float[]> PetBonusesDictionary;
+    public string[] Pets = {"Chicken", "Cow", "Zombie", "Creeper", "Enderman"};
     public Dictionary<string,float[]> SetPetBonuses() 
     {
         PetBonusesDictionary = new Dictionary<string, float[]>()
