@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Money : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Money : MonoBehaviour
     private TMP_Text MoneyCountUI;
     public static float MoneyCount {get; set;}
     public static float MultipleMoney {get; set;}
+    public static float Bonus{get;set;}
 
     private void Start() 
     {
@@ -15,6 +17,8 @@ public class Money : MonoBehaviour
         MoneyCount = float.Parse(MoneyCountUI.text);
         BlockLink = GetComponent<Block>();
         MultipleMoney = 1f;
+        Bonus = 0;
+        StartCoroutine(UpdateMoneyEventTick());
     }
 
     public void GetMoney()
@@ -44,5 +48,16 @@ public class Money : MonoBehaviour
             MoneyCount += 20 * MultipleMoney;
         }
         MoneyCountUI.text = Convert.ToString(MoneyCount);
+    }
+
+    IEnumerator UpdateMoneyEventTick()
+    {
+        while(true)
+        {
+            MoneyCount += Bonus;
+            MoneyCountUI.text = Convert.ToString(MoneyCount);
+            yield return new WaitForSeconds(1);
+        }
+        
     }
 }

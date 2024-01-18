@@ -25,6 +25,8 @@ public class BuyPet : MonoBehaviour
         {
             int CurentLevel = int.Parse(Level.text) + 1;
             Level.text = Convert.ToString(CurentLevel);
+            Money.MoneyCount -= float.Parse(Cost.text);
+            Money.Bonus += float.Parse(Bonus.text);
             SetPetStats(PetName);
         }
     }
