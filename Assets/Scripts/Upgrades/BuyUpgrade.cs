@@ -75,6 +75,18 @@ public class BuyUpgrade : MonoBehaviour
             Bonus.text = Convert.ToString(Bonuses[2]);
             Cost.text = Convert.ToString(int.Parse(Cost.text) + Costs[2]);
         }
+        else if(int.Parse(Level.text) < 100)
+        {
+            Icon.sprite = UpgradeSprites[3];
+            Bonus.text = Convert.ToString(Bonuses[3]);
+            Cost.text = Convert.ToString(int.Parse(Cost.text) + Costs[3]);
+        }
+        else if(int.Parse(Level.text) < 125)
+        {
+            Icon.sprite = UpgradeSprites[4];
+            Bonus.text = Convert.ToString(Bonuses[4]);
+            Cost.text = Convert.ToString(int.Parse(Cost.text) + Costs[4]);
+        }
         else
         {
             GameObject.Find($"{UpgradeName}/BuyUpgrade").GetComponent<Button>().enabled = false;

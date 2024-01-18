@@ -1,0 +1,30 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="BuyPet">
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+		</type>
+		<type fullname="BuyUpgrade">
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+		</type>
+		<type fullname="Exit">
+			<method name="ExitGame"/>
+			<method name="ExitPetsMenu"/>
+			<method name="ExitUpgradeMenu"/>
+		</type>
+		<type fullname="ScenceLoad">
+			<method name="LoadScence"/>
+			<method name="LoadScence"/>
+		</type>
+		<type fullname="Shop">
+			<method name="OpenPets"/>
+			<method name="OpenUpgrades"/>
+		</type>
+	</assembly>
+</linker>

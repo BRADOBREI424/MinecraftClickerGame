@@ -1,19 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Axe
     - Block
-    - Buy
     - BuyPet
+    - BuyUpgrade
     - Exit
-    - Fist
+    - HideShop
     - Money
     - PetBonuses
     - PetCosts
-    - Pickaxe
     - ScenceLoad
     - Shop
-    - Shovel
+    - UpgradeBonuses
+    - UpgradeCosts
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
@@ -60,8 +59,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -126,32 +127,32 @@ ScriptsOnlyBuild:
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: Shovel
-    methodName: BuyShovel
-  - assembly: Assembly-CSharp
-    fullTypeName: Fist
-    methodName: BuyFistUpgrade
-  - assembly: Assembly-CSharp
-    fullTypeName: Pickaxe
-    methodName: BuyPickaxe
+    fullTypeName: BuyPet
+    methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: OpenPets
-  - assembly: Assembly-CSharp
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: Axe
-    methodName: BuyAxe
+    fullTypeName: BuyUpgrade
+    methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: OpenUpgrades
   - assembly: Assembly-CSharp
-    fullTypeName: BuyPet
+    fullTypeName: BuyUpgrade
     methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyUpgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyUpgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: OpenPets
   - assembly: Assembly-CSharp
     fullTypeName: Exit
     methodName: ExitPetsMenu
@@ -177,7 +178,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -242,18 +249,22 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 16604}
     - Class: 114
       Script: {instanceID: 16656}
-    - Class: 114
-      Script: {instanceID: 16678}
-    - Class: 114
-      Script: {instanceID: 17122}
     - Class: 114
       Script: {instanceID: 17306}
     - Class: 114
@@ -261,11 +272,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 18142}
     - Class: 114
-      Script: {instanceID: 19050}
-    - Class: 114
       Script: {instanceID: 19186}
-    - Class: 114
-      Script: {instanceID: 19216}
     - Class: 114
       Script: {instanceID: 19448}
     - Class: 114
@@ -283,8 +290,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22300}
     - Class: 114
-      Script: {instanceID: 22342}
-    - Class: 114
       Script: {instanceID: 22546}
     - Class: 114
       Script: {instanceID: 22710}
@@ -294,6 +299,14 @@ ScriptsOnlyBuild:
       Script: {instanceID: 23632}
     - Class: 114
       Script: {instanceID: 23700}
+    - Class: 114
+      Script: {instanceID: 73698}
+    - Class: 114
+      Script: {instanceID: 73710}
+    - Class: 114
+      Script: {instanceID: 73718}
+    - Class: 114
+      Script: {instanceID: 97470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -337,12 +350,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Pickaxe
   - hash:
       serializedVersion: 2
       Hash: 74007bf515c4306e564934b368232bdb
@@ -403,12 +410,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: SimpleScript
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Axe
   - hash:
       serializedVersion: 2
       Hash: e787d376c3043ebff586aa89e40f3d89
@@ -732,12 +733,6 @@ ScriptsOnlyBuild:
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: Fist
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
     className: Exit
   - hash:
       serializedVersion: 2
@@ -751,12 +746,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
     className: ScriptGraphAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Shovel
   - hash:
       serializedVersion: 2
       Hash: b6e08e9716184d5736af5af9ffaf1513
@@ -1203,12 +1192,6 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 9ba835720df3a47df127b64cd9f420a4
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Buy
-  - hash:
-      serializedVersion: 2
       Hash: a03cf6f60c605d858f83449f4b4fc400
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools
@@ -1585,6 +1568,30 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BuyUpgrade
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradeBonuses
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradeCosts
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HideShop
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
