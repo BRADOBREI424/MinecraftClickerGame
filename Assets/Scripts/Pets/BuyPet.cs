@@ -13,6 +13,7 @@ public class BuyPet : MonoBehaviour
     private TMP_Text Bonus;
     private PetBonuses petBonuses;
     private PetCosts petCosts;
+    private Animator PetBuyCancled;
     private void Start() 
     {
         petBonuses = GetComponent<PetBonuses>();
@@ -20,19 +21,31 @@ public class BuyPet : MonoBehaviour
     }
     public void Buy(string PetName)
     {
-        GetPet(PetName);
-        if(Money.MoneyCount >= float.Parse(Cost.text))
+        try
         {
-            Money.MoneyCount -= float.Parse(Cost.text);
-            int CurentLevel = int.Parse(Level.text) + 1;
-            Level.text = Convert.ToString(CurentLevel);
-            SetPetStats(PetName);
+            GetPet(PetName);
+            if(Money.MoneyCount >= float.Parse(Cost.text))
+            {
+                Money.MoneyCount -= float.Parse(Cost.text);
+                int CurentLevel = int.Parse(Level.text) + 1;
+                Level.text = Convert.ToString(CurentLevel);
+                SetPetStats(PetName);
+            }
+            else
+            {
+                PetBuyCancled.Play("BuyCancled");
+            }
         }
+        catch (Exception ex)
+        {
+            Debug.Log(ex);
+        }
+        
     }
 
     private void GetPet(string PetName)
     {
-        
+        this.PetBuyCancled =GetComponent<Animator>();
         PetSprites = Resources.LoadAll<Sprite>($"Sprites/Pets/{PetName}");
         Icon = GameObject.Find($"{PetName}/PetIcon").GetComponent<Image>();
         Level = GameObject.Find($"{PetName}/PetLevel").GetComponent<TMP_Text>();

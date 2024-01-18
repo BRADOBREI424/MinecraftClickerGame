@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 2412976300337084896}
   - component: {fileID: 8050762539731648531}
   - component: {fileID: 5407410524101835935}
-  - component: {fileID: 2515473485112107640}
   m_Layer: 5
   m_Name: Upgrade
   m_TagString: Untagged
@@ -201,19 +200,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322912384068212616}
   m_CullTransparentMesh: 1
---- !u!114 &2515473485112107640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322912384068212616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7171b3a077d144e69a1fb125791c751d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isUpgrade: 0
 --- !u!1 &422849294075285450
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 19cce94b6c831406fba5493323b6b0f7, type: 2}
   m_sharedMaterial: {fileID: 4645622294266327701, guid: 19cce94b6c831406fba5493323b6b0f7, type: 2}
@@ -572,6 +558,10 @@ GameObject:
   - component: {fileID: 4560787273411938294}
   - component: {fileID: 7510542462949480370}
   - component: {fileID: 1491191142712265086}
+  - component: {fileID: 6115541051135045207}
+  - component: {fileID: 49494010751746907}
+  - component: {fileID: 3274428255358916279}
+  - component: {fileID: 291726551198106941}
   m_Layer: 5
   m_Name: BuyUpgrade
   m_TagString: Untagged
@@ -682,10 +672,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Fist, Assembly-CSharp
-        m_MethodName: BuyFistUpgrade
-        m_Mode: 1
+      - m_Target: {fileID: 49494010751746907}
+        m_TargetAssemblyTypeName: BuyUpgrade, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -694,6 +684,63 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &6115541051135045207
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656480209601177939}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1efeffe0e4de4a2b9f3b4f108a595f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &49494010751746907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656480209601177939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2317716db234c138483a69efae6642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3274428255358916279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656480209601177939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2bb697ebff14ca9bd221a5db798222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &291726551198106941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656480209601177939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ae83ff05b5641889948a0c12d72d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7178661724120683872
 GameObject:
   m_ObjectHideFlags: 0

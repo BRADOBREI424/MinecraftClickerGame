@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 3781892007051930552}
   - component: {fileID: 5131743888176160583}
   - component: {fileID: 3919891764994484910}
+  - component: {fileID: 5833716574712649347}
   m_Layer: 5
   m_Name: BuyPet
   m_TagString: Untagged
@@ -857,6 +858,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd317f1728dba46a896ee082b405afc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pets:
+  - Chicken
+  - Cow
+  - Zombie
+  - Creeper
+  - Enderman
 --- !u!114 &3919891764994484910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +876,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8539d6acc738a4ad0a1da449c119b98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &5833716574712649347
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656480209601177939}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59c08e2337a4a43a8ad6600460414a25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7178661724120683872
 GameObject:
   m_ObjectHideFlags: 0

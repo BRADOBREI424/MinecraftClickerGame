@@ -123,35 +123,35 @@ ScriptsOnlyBuild:
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
+    fullTypeName: BuyPet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Shovel
+    methodName: BuyShovel
+  - assembly: Assembly-CSharp
+    fullTypeName: Fist
+    methodName: BuyFistUpgrade
+  - assembly: Assembly-CSharp
+    fullTypeName: Pickaxe
+    methodName: BuyPickaxe
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyPet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: OpenPets
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyPet
+    methodName: Buy
+  - assembly: Assembly-CSharp
     fullTypeName: Axe
     methodName: BuyAxe
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: OpenUpgrades
   - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: OpenPets
-  - assembly: Assembly-CSharp
-    fullTypeName: Shovel
-    methodName: BuyShovel
-  - assembly: Assembly-CSharp
     fullTypeName: BuyPet
     methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: BuyPet
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: Fist
-    methodName: BuyFistUpgrade
-  - assembly: Assembly-CSharp
-    fullTypeName: BuyPet
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: BuyPet
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: Pickaxe
-    methodName: BuyPickaxe
   - assembly: Assembly-CSharp
     fullTypeName: Exit
     methodName: ExitPetsMenu
