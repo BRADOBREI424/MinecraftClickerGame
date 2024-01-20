@@ -438,6 +438,11 @@ UnityEngine.Object::FindObjectFromInstanceID
 UnityEngine.Object::Internal_CloneSingle
 UnityEngine.ObjectGUIState::Internal_Create
 UnityEngine.ObjectGUIState::Internal_Destroy
+UnityEngine.ParticleSystem::EmitOld_Internal
+UnityEngine.ParticleSystem::Emit_Injected
+UnityEngine.ParticleSystem::Emit_Internal
+UnityEngine.ParticleSystem::Play
+UnityEngine.ParticleSystemRenderer::GetMeshes
 UnityEngine.Physics::get_invokeCollisionCallbacks
 UnityEngine.Physics::get_reuseCollisionCallbacks
 UnityEngine.Physics::SendOnCollisionEnter

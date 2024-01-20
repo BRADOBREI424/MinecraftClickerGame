@@ -10,9 +10,13 @@ public class Block : MonoBehaviour
     public string NewBlock;
     public string DestroyedBlock;
     private Money Money;
+    private Animator BlockAnimation;
+    private ParticleSystem BlockParticle;
 
     private void Start() 
     {
+        BlockParticle = GameObject.Find("BlockParticle").GetComponent<ParticleSystem>();
+        this.BlockAnimation = GetComponent<Animator>();
         BlockPath = new string[]{"Coblestone", "Coper", "Gold", "Ruby", "Emerald", "Diamond"};
         NewBlock = BlockPath[0];
         DestroyedBlock = NewBlock;
@@ -25,6 +29,8 @@ public class Block : MonoBehaviour
         if (SpriteNumber < 8)
         {
             SpriteNumber ++;
+            BlockAnimation.Play("Block");
+            BlockParticle.Play();
         }
         else
         {
