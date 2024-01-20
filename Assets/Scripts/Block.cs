@@ -12,6 +12,8 @@ public class Block : MonoBehaviour
     private Money Money;
     private Animator BlockAnimation;
     private ParticleSystem BlockParticle;
+    public AudioSource DigSound;
+    public AudioSource DestroySound;
 
     private void Start() 
     {
@@ -28,12 +30,14 @@ public class Block : MonoBehaviour
     {
         if (SpriteNumber < 8)
         {
+            DigSound.Play();
             SpriteNumber ++;
             BlockAnimation.Play("Block");
             BlockParticle.Play();
         }
         else
         {
+            DestroySound.Play();
             System.Random randomNumber = new System.Random();
             NewBlock = BlockPath[randomNumber.Next(0,6)];
             Sprites = Resources.LoadAll<Sprite>($@"Sprites/{NewBlock}");

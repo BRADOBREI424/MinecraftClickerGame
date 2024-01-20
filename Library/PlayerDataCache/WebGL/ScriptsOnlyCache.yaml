@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - PetCosts
     - ScenceLoad
     - Shop
+    - Sound
     - UpgradeBonuses
     - UpgradeCosts
     Unity.2D.Animation.Editor.dll:
@@ -54,6 +55,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TMP_SubMeshUI
     - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -61,7 +63,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateEditor
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -75,6 +76,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
@@ -120,20 +122,11 @@ ScriptsOnlyBuild:
     fullTypeName: Exit
     methodName: ExitGame
   - assembly: Assembly-CSharp
-    fullTypeName: BuyUpgrade
-    methodName: Buy
-  - assembly: Assembly-CSharp
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: BuyPet
     methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: BuyPet
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: OpenUpgrades
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: OpenPets
@@ -144,13 +137,25 @@ ScriptsOnlyBuild:
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: OpenUpgrades
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyUpgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyUpgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: BuyUpgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: Click
+  - assembly: Assembly-CSharp
     fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: BuyUpgrade
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: BuyUpgrade
+    fullTypeName: BuyPet
     methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Exit
@@ -252,6 +257,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -306,6 +315,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 73718}
     - Class: 114
       Script: {instanceID: 97470}
+    - Class: 114
+      Script: {instanceID: 142678}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -415,7 +426,7 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: e787d376c3043ebff586aa89e40f3d89
+      Hash: cec9552c73147c9292ab43b39a6eab2a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Block
@@ -1595,8 +1606,14 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: HideShop
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Sound
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScence.unity
-  playerPath: /Users/andrey/MinecraftClicker/Build_3
+  playerPath: /Users/andrey/YandexGames/MineClickerBlocks

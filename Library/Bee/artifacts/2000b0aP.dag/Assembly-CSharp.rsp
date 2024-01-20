@@ -307,6 +307,7 @@
 "Assets/Scripts/Pets/PetCosts.cs"
 "Assets/Scripts/ScenceLoad.cs"
 "Assets/Scripts/Shop.cs"
+"Assets/Scripts/Sound.cs"
 "Assets/Scripts/StartButton.cs"
 "Assets/Scripts/Upgrades/BuyUpgrade.cs"
 "Assets/Scripts/Upgrades/UpgradeBonuses.cs"

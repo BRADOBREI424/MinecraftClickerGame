@@ -56,6 +56,8 @@ UnityEngine.Application::Quit
 UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
 UnityEngine.AsyncOperation::InternalDestroy
+UnityEngine.AudioListener::set_pause
+UnityEngine.AudioSource::PlayHelper
 UnityEngine.Behaviour::get_enabled
 UnityEngine.Behaviour::get_isActiveAndEnabled
 UnityEngine.Behaviour::set_enabled
