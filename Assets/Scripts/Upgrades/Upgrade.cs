@@ -43,7 +43,7 @@ public class Upgrade : MonoBehaviour
         }
     }
 
-    public void SetStats()
+    private void SetStats()
     {
         int CurrentStage = IdentifyStage();
         if (CurrentStage == -1)
@@ -76,7 +76,7 @@ public class Upgrade : MonoBehaviour
         else
         {
             Button BuyButton = GameObject.Find($"{this.name}/BuyUpgrade").GetComponent<Button>();
-            BuyButton.animator.Play($"UpgradeCancled");
+            BuyButton.animator.Play("UpgradeCancled");
         }
     }
 

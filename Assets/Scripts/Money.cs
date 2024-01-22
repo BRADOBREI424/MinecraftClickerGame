@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using Unity.Mathematics;
 
 public class Money : MonoBehaviour
 {
@@ -8,24 +10,28 @@ public class Money : MonoBehaviour
     [SerializeField] private static float _currentValue;
     public static float CurrentValuue => _currentValue;
     [SerializeField] private float _upgradeBonus;
+    [SerializeField] private float _petBonus;
 
     
 
     private void Start() 
     {
         this._moneyText = GetComponent<TMP_Text>();
-        // StartCoroutine(UpdateMoneyEventTick());
     }
 
     private void OnEnable() {
         Block.DestroyBlock += GetMoney;
         Upgrade.Purchase += DecreaseMoney;
         Upgrade.SetBonus += SetUpgradeBonus;
+        Pet.Purchase += DecreaseMoney;
+        Pet.SetBonus += SetPetBonus;
     }
     private void OnDisable() {
         Block.DestroyBlock -= GetMoney;
         Upgrade.Purchase -= DecreaseMoney;
         Upgrade.SetBonus -= SetUpgradeBonus;
+        Pet.Purchase -= DecreaseMoney;
+        Pet.SetBonus -= SetPetBonus;
     }
 
     public void GetMoney(int DestroyedBlock)
@@ -54,27 +60,32 @@ public class Money : MonoBehaviour
             {
                 _currentValue += 20 + _upgradeBonus;
             }
-            _moneyText.text = Convert.ToString(_currentValue);
+            _moneyText.text = Convert.ToString(RoundCurrentValue());
     }
 
     private void DecreaseMoney(float cost)
     {
         _currentValue -= cost;
-        _moneyText.text = Convert.ToString(_currentValue);
+        _moneyText.text = Convert.ToString(RoundCurrentValue());
     }
     private void SetUpgradeBonus(float bonus)
     {
         _upgradeBonus += bonus;
     }
-    
+    private void SetPetBonus(float bonus)
+    {
+        _petBonus += bonus;
+        StartCoroutine(UpdateMoneyEventTick());
+    }
+    private double RoundCurrentValue() {return Math.Round(_currentValue, 1);}
 
-    // IEnumerator UpdateMoneyEventTick()
-    // {
-    //     while(true)
-    //     {
-                
-    //             MoneyCountUI.text = Convert.ToString(MoneyCount);
-    //             yield return new WaitForSeconds(1);
-    //     }
-    // }
+    IEnumerator UpdateMoneyEventTick()
+    {
+        while(true)
+        {
+            _currentValue += _petBonus;
+            _moneyText.text = Convert.ToString(RoundCurrentValue());
+            yield return new WaitForSeconds(1);
+        }
+    }
 }

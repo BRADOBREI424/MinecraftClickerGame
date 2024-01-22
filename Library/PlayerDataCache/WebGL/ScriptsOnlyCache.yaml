@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - Exit
     - HideShop
     - Money
+    - Pet
     - ScenceLoad
     - Shop
     - Sound
@@ -117,11 +118,23 @@ ScriptsOnlyBuild:
     fullTypeName: Exit
     methodName: ExitGame
   - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: OpenUpgrades
+  - assembly: Assembly-CSharp
     fullTypeName: Upgrade
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: OpenUpgrades
+    fullTypeName: Upgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Pet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: Click
+  - assembly: Assembly-CSharp
+    fullTypeName: Pet
+    methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: OpenPets
@@ -129,14 +142,17 @@ ScriptsOnlyBuild:
     fullTypeName: Upgrade
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: Upgrade
+    fullTypeName: Pet
     methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Upgrade
     methodName: Buy
   - assembly: Assembly-CSharp
-    fullTypeName: Sound
-    methodName: Click
+    fullTypeName: Pet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Pet
+    methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Exit
     methodName: ExitPetsMenu
@@ -248,8 +264,6 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 0}
-    - Class: 114
       Script: {instanceID: 16606}
     - Class: 114
       Script: {instanceID: 16610}
@@ -286,9 +300,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23802}
     - Class: 114
-      Script: {instanceID: 23880}
-    - Class: 114
       Script: {instanceID: 46506}
+    - Class: 114
+      Script: {instanceID: 78100}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1202,7 +1216,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: d462134e2b2ecf23000dbddfa9fe3afa
+      Hash: 63054c277a97619767dc678070b6134e
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Money
@@ -1554,6 +1568,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Upgrade
+  - hash:
+      serializedVersion: 2
+      Hash: bded124fb7a3b19d9524fefd192df149
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Pet
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

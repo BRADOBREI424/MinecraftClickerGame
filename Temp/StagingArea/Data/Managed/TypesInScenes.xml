@@ -4,6 +4,7 @@
 		<type fullname="Exit" preserve="nothing"/>
 		<type fullname="HideShop" preserve="nothing"/>
 		<type fullname="Money" preserve="nothing"/>
+		<type fullname="Pet" preserve="nothing"/>
 		<type fullname="ScenceLoad" preserve="nothing"/>
 		<type fullname="Shop" preserve="nothing"/>
 		<type fullname="Sound" preserve="nothing"/>

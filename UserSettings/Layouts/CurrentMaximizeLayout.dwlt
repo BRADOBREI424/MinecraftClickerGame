@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 22247
+  controlID: 30923
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 22202
+  controlID: 30877
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 22193
+  controlID: 30854
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -240,7 +240,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2813ffff7a13ffff021affff2c1affffe2c4ffff52c6ffff36d0ffff86d0ffffecd5ffff10d6fffff0daffff42dbffffc4e0ffffe8e0ffff98e3ffff2eebffff76ebffff72f2ffffa8f2ffff0efbffffd47a00004c7b00007285000070870000ca8700002ab10000c2b10000a4b30000feb3000034b4000088b4000084e30000fae300002ee40000f4e5000048e6000082e60000
+      m_ExpandedIDs: f893feff3e94feffca9afefff89afeff2813ffff7a13ffff021affff2c1affffe2c4ffff52c6ffff36d0ffff86d0ffffecd5ffff10d6fffff0daffff42dbffffc4e0ffffe8e0ffff98e3ffff2eebffff76ebffff72f2ffffa8f2ffff0efbffffd47a00004c7b00007285000070870000ca8700002ab10000c2b10000a4b30000feb3000034b4000088b4000084e30000fae300002ee40000f4e5000048e6000082e600000a2f0100862f01005030010086300100b0300100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -864,9 +864,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: a1efeffe0e4de4a2b9f3b4f108a595f9, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 59c08e2337a4a43a8ad6600460414a25, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 4487695758281388888, guid: a1efeffe0e4de4a2b9f3b4f108a595f9, type: 2}
+  - m_Target: {fileID: 7954209502649345355, guid: 59c08e2337a4a43a8ad6600460414a25, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -987,7 +987,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Animations
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -995,15 +995,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Animations
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/andrey/MinecraftClickerGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 72.99347}
-    m_SelectedIDs: 4c660000
-    m_LastClickedID: 26188
+    scrollPos: {x: 0, y: 107.00011}
+    m_SelectedIDs: 4e660000
+    m_LastClickedID: 26190
     m_ExpandedIDs: 000000002c6600002e6600003066000036660000386600003a66000064660000a6ac0000b8ac000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1057,8 +1057,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c2610000
-    m_LastClickedInstanceID: 25026
+    m_SelectedInstanceIDs: 882e0100
+    m_LastClickedInstanceID: 77448
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000b68400008e670000d4f4ffffde670000
     m_RenameOverlay:
@@ -1158,7 +1158,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 25026
+  m_LastSelectedObjectID: 77448
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1261,7 +1261,7 @@ MonoBehaviour:
     m_CachedPref: 174
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 25026
+  m_LastInspectedObjectInstanceID: 77448
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

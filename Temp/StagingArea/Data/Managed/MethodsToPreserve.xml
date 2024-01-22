@@ -5,6 +5,13 @@
 			<method name="ExitPetsMenu"/>
 			<method name="ExitUpgradeMenu"/>
 		</type>
+		<type fullname="Pet">
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+			<method name="Buy"/>
+		</type>
 		<type fullname="ScenceLoad">
 			<method name="LoadScence"/>
 			<method name="LoadScence"/>

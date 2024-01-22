@@ -307,6 +307,7 @@
 "Assets/Scripts/Exit.cs"
 "Assets/Scripts/HideShop.cs"
 "Assets/Scripts/Money.cs"
+"Assets/Scripts/Pets/Pet.cs"
 "Assets/Scripts/ScenceLoad.cs"
 "Assets/Scripts/Shop.cs"
 "Assets/Scripts/Sound.cs"
