@@ -1,62 +1,80 @@
 using System;
 using UnityEngine;
 using TMPro;
-using System.Collections;
 
 public class Money : MonoBehaviour
 {
-    private Block BlockLink;
-    private TMP_Text MoneyCountUI;
-    public static float MoneyCount {get; set;}
-    public static float MultipleMoney {get; set;}
-    public static float Bonus{get;set;}
+    private TMP_Text _moneyText;
+    [SerializeField] private static float _currentValue;
+    public static float CurrentValuue => _currentValue;
+    [SerializeField] private float _upgradeBonus;
+
+    
 
     private void Start() 
     {
-        MoneyCountUI = GameObject.Find("Money").GetComponent<TMP_Text>();
-        MoneyCount = float.Parse(MoneyCountUI.text);
-        BlockLink = GetComponent<Block>();
-        MultipleMoney = 1f;
-        Bonus = 0;
-        StartCoroutine(UpdateMoneyEventTick());
+        this._moneyText = GetComponent<TMP_Text>();
+        // StartCoroutine(UpdateMoneyEventTick());
     }
 
-    public void GetMoney()
-    {
-            if(BlockLink.DestroyedBlock == "Coblestone")
-            {
-                MoneyCount += 1 * MultipleMoney;
-            }
-            else if(BlockLink.DestroyedBlock == "Coper")
-            {
-                MoneyCount += 3 * MultipleMoney;
-            }
-            else if(BlockLink.DestroyedBlock == "Gold")
-            {
-                MoneyCount += 5 * MultipleMoney;
-            }
-            else if(BlockLink.DestroyedBlock == "Diamond")
-            {
-                MoneyCount += 12 * MultipleMoney;
-            }
-            else if(BlockLink.DestroyedBlock == "Ruby")
-            {
-                MoneyCount += 15 * MultipleMoney;
-            }
-            else if(BlockLink.DestroyedBlock == "Emerald")
-            {
-                MoneyCount += 20 * MultipleMoney;
-            }
-            MoneyCountUI.text = Convert.ToString(MoneyCount);
+    private void OnEnable() {
+        Block.DestroyBlock += GetMoney;
+        Upgrade.Purchase += DecreaseMoney;
+        Upgrade.SetBonus += SetUpgradeBonus;
+    }
+    private void OnDisable() {
+        Block.DestroyBlock -= GetMoney;
+        Upgrade.Purchase -= DecreaseMoney;
+        Upgrade.SetBonus -= SetUpgradeBonus;
     }
 
-    IEnumerator UpdateMoneyEventTick()
+    public void GetMoney(int DestroyedBlock)
     {
-        while(true)
-        {
-                MoneyCount += Bonus;
-                MoneyCountUI.text = Convert.ToString(MoneyCount);
-                yield return new WaitForSeconds(1);
-        }
+            if(DestroyedBlock == 0)
+            {
+                _currentValue += 1 + _upgradeBonus;
+            }
+            else if(DestroyedBlock == 1)
+            {
+                _currentValue += 3 + _upgradeBonus;
+            }
+            else if(DestroyedBlock == 2)
+            {
+                _currentValue += 5 + _upgradeBonus;
+            }
+            else if(DestroyedBlock == 3)
+            {
+                _currentValue += 12 + _upgradeBonus;
+            }
+            else if(DestroyedBlock == 4)
+            {
+                _currentValue += 15 + _upgradeBonus;
+            }
+            else if(DestroyedBlock == 5)
+            {
+                _currentValue += 20 + _upgradeBonus;
+            }
+            _moneyText.text = Convert.ToString(_currentValue);
     }
+
+    private void DecreaseMoney(float cost)
+    {
+        _currentValue -= cost;
+        _moneyText.text = Convert.ToString(_currentValue);
+    }
+    private void SetUpgradeBonus(float bonus)
+    {
+        _upgradeBonus += bonus;
+    }
+    
+
+    // IEnumerator UpdateMoneyEventTick()
+    // {
+    //     while(true)
+    //     {
+                
+    //             MoneyCountUI.text = Convert.ToString(MoneyCount);
+    //             yield return new WaitForSeconds(1);
+    //     }
+    // }
 }

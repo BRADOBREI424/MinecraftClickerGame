@@ -2522,10 +2522,6 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_ResourcesAPIInternal_FindObjectsOfTypeAll();
 		Register_UnityEngine_ResourcesAPIInternal_FindObjectsOfTypeAll();
 
-		//UnityEngine.Object[] UnityEngine.ResourcesAPIInternal::LoadAll(System.String,System.Type)
-		void Register_UnityEngine_ResourcesAPIInternal_LoadAll();
-		Register_UnityEngine_ResourcesAPIInternal_LoadAll();
-
 		//UnityEngine.Shader UnityEngine.ResourcesAPIInternal::FindShaderByName(System.String)
 		void Register_UnityEngine_ResourcesAPIInternal_FindShaderByName();
 		Register_UnityEngine_ResourcesAPIInternal_FindShaderByName();

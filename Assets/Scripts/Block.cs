@@ -1,50 +1,61 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Block : MonoBehaviour
 {
 
+    [SerializeField]private Sprite[] _coblestone;
+    [SerializeField]private Sprite[] _iron;
+    [SerializeField]private Sprite[] _gold;
+    [SerializeField]private Sprite[] _diamond;
+    [SerializeField]private Sprite[] _emerald;
+    [SerializeField]private Sprite[] _ruby;
+    private Sprite[] _currentBlock;
     private SpriteRenderer spriteRenderer;
-    private Sprite[] Sprites;
-    private int SpriteNumber = 0;
-    private string[] BlockPath;
-    public string NewBlock;
-    public string DestroyedBlock;
-    private Money Money;
-    private Animator BlockAnimation;
-    private ParticleSystem BlockParticle;
-    public AudioSource DigSound;
-    public AudioSource DestroySound;
+    private int _currentBlockID;
+    private int _сlickCount;
+    [SerializeField]private AudioSource _digSound;
+    [SerializeField]private AudioSource _destroySound;
+
+    public static Action<int> DestroyBlock;
 
     private void Start() 
     {
-        BlockParticle = GameObject.Find("BlockParticle").GetComponent<ParticleSystem>();
-        this.BlockAnimation = GetComponent<Animator>();
-        BlockPath = new string[]{"Coblestone", "Coper", "Gold", "Ruby", "Emerald", "Diamond"};
-        NewBlock = BlockPath[0];
-        DestroyedBlock = NewBlock;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Sprites = Resources.LoadAll<Sprite>($@"Sprites/{NewBlock}");
-        Money = GetComponent<Money>();
+        GetRandomBlock();
+        spriteRenderer.sprite = _currentBlock[0];
     }
     private void OnMouseDown() 
     {
-        if (SpriteNumber < 8)
+        if (_сlickCount < 8)
         {
-            DigSound.Play();
-            SpriteNumber ++;
-            BlockAnimation.Play("Block");
-            BlockParticle.Play();
+            _digSound.Play();
+            _сlickCount ++;
+            this.GetComponent<Animator>().Play("Block");
+            GameObject.Find("BlockParticle").GetComponent<ParticleSystem>().Play();
         }
         else
         {
-            DestroySound.Play();
-            System.Random randomNumber = new System.Random();
-            NewBlock = BlockPath[randomNumber.Next(0,6)];
-            Sprites = Resources.LoadAll<Sprite>($@"Sprites/{NewBlock}");
-            SpriteNumber = 0;
-            Money.GetMoney();
-            DestroyedBlock = NewBlock;
+            _destroySound.Play();
+            int _destroyedBlockID = _currentBlockID;
+            DestroyBlock?.Invoke(_destroyedBlockID);
+            _сlickCount = 0;
+            GetRandomBlock();
         }
-        spriteRenderer.sprite = Sprites[SpriteNumber];
+        spriteRenderer.sprite = _currentBlock[_сlickCount];
+    }
+    private void GetRandomBlock()
+    {
+        System.Random random = new System.Random();
+        _currentBlockID = random.Next(0,6);
+        if(_currentBlockID == 0) {_currentBlock = _coblestone;}
+        else if(_currentBlockID == 1) {_currentBlock = _iron;}
+        else if(_currentBlockID == 2) {_currentBlock = _gold;}
+        else if(_currentBlockID == 3) {_currentBlock = _diamond;}
+        else if(_currentBlockID == 4) {_currentBlock = _emerald;}
+        else if(_currentBlockID == 5) {_currentBlock = _ruby;}
+        
     }
 }
