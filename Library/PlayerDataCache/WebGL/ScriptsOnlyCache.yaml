@@ -118,23 +118,11 @@ ScriptsOnlyBuild:
     fullTypeName: Exit
     methodName: ExitGame
   - assembly: Assembly-CSharp
+    fullTypeName: Upgrade
+    methodName: Buy
+  - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: OpenUpgrades
-  - assembly: Assembly-CSharp
-    fullTypeName: Upgrade
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: Upgrade
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: Pet
-    methodName: Buy
-  - assembly: Assembly-CSharp
-    fullTypeName: Sound
-    methodName: Click
-  - assembly: Assembly-CSharp
-    fullTypeName: Pet
-    methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: OpenPets
@@ -149,6 +137,18 @@ ScriptsOnlyBuild:
     methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Pet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Pet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Pet
+    methodName: Buy
+  - assembly: Assembly-CSharp
+    fullTypeName: Sound
+    methodName: Click
+  - assembly: Assembly-CSharp
+    fullTypeName: Upgrade
     methodName: Buy
   - assembly: Assembly-CSharp
     fullTypeName: Pet
@@ -1574,8 +1574,14 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Pet
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: savesData
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScence.unity
-  playerPath: /Users/andrey/YandexGames/MineClickerBlock_0.0.2
+  playerPath: /Users/andrey/YandexGames/MineClickerBlock_0.0.3

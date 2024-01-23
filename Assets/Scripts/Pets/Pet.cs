@@ -9,8 +9,9 @@ public class Pet : MonoBehaviour
     [SerializeField] private float[] _bonuses;
     [SerializeField] private float[] _costs;
     [SerializeField] private Sprite[] _sprites;
-    private float _currentCost;
+    [SerializeField]private float _currentCost;
     private float _currentBonus;
+    private int _currentStage;
     public static Action<float> Purchase;
     public static Action<float> SetBonus;
 
@@ -35,38 +36,53 @@ public class Pet : MonoBehaviour
     }
     private void SetStats()
     {
-        int CurrentStage = IdentifyStage();
-        if (CurrentStage == -1)
+         
+        if (_currentStage == -1)
         {
             GameObject.Find($"{this.name}/BuyPet").GetComponent<Button>().enabled = false;
             GameObject.Find($"{this.name}/BuyPetText").GetComponent<TMP_Text>().text = "МАКС. УРОВЕНЬ";
         }
         else
         {
-            _currentCost += _costs[CurrentStage];
-            _currentBonus = _bonuses[CurrentStage];
-            _level += 1;
-            GameObject.Find($"{this.name}/PetIcon").GetComponent<Image>().sprite = _sprites[CurrentStage];
+            _currentBonus = _bonuses[_currentStage];
+            GameObject.Find($"{this.name}/PetIcon").GetComponent<Image>().sprite = _sprites[_currentStage];
             GameObject.Find($"{this.name}/PetCost").GetComponent<TMP_Text>().text = Convert.ToString(_currentCost);
             GameObject.Find($"{this.name}/PetBonus").GetComponent<TMP_Text>().text = Convert.ToString(_currentBonus);
             GameObject.Find($"{this.name}/PetLevel").GetComponent<TMP_Text>().text = Convert.ToString(_level);
         }
     }
     private void Start() {
-        SetStats();
+        _level = PlayerPrefs.GetInt($"{this.name}Level");
+        if(this._level > 0) 
+        {
+            _currentCost = PlayerPrefs.GetFloat($"{this.name}Cost");
+            _currentStage = PlayerPrefs.GetInt($"{this.name}Stage");
+            SetStats();
+        }
     }
     public void Buy()
     {
         if(Money.CurrentValuue >= _currentCost)
         {
+            _currentStage = IdentifyStage();
             Purchase?.Invoke(_currentCost);
+            _currentCost += _costs[_currentStage];
+            _level += 1;
             SetStats();
             SetBonus?.Invoke(_currentBonus);
+            Save();
         }
         else
         {
             Button BuyButton = GameObject.Find($"{this.name}/BuyPet").GetComponent<Button>();
             BuyButton.animator.Play("BuyCancled");
         }
+    }
+
+    private void Save()
+    {
+        PlayerPrefs.SetFloat($"{this.name}Cost", _currentCost);
+        PlayerPrefs.SetInt($"{this.name}Stage", _currentStage);
+        PlayerPrefs.SetInt($"{this.name}Level", _level);
     }
 }

@@ -17,6 +17,12 @@ public class Money : MonoBehaviour
     private void Start() 
     {
         this._moneyText = GetComponent<TMP_Text>();
+        _currentValue = PlayerPrefs.GetFloat("Money");
+        _upgradeBonus = PlayerPrefs.GetFloat("UpgradeBonus");
+        _petBonus = PlayerPrefs.GetFloat("PetBonus");
+        _moneyText.text = RoundCurrentValue();
+        StartCoroutine(UpdateMoneyEventTick());
+        StartCoroutine(SaveEvent());
     }
 
     private void OnEnable() {
@@ -60,32 +66,47 @@ public class Money : MonoBehaviour
             {
                 _currentValue += 20 + _upgradeBonus;
             }
-            _moneyText.text = Convert.ToString(RoundCurrentValue());
+            _moneyText.text = RoundCurrentValue();
     }
 
     private void DecreaseMoney(float cost)
     {
         _currentValue -= cost;
-        _moneyText.text = Convert.ToString(RoundCurrentValue());
+        _moneyText.text = RoundCurrentValue();
+        SaveCurrentMoney();
     }
     private void SetUpgradeBonus(float bonus)
     {
         _upgradeBonus += bonus;
+        PlayerPrefs.SetFloat("UpgradeBonus", _upgradeBonus);
     }
     private void SetPetBonus(float bonus)
     {
         _petBonus += bonus;
-        StartCoroutine(UpdateMoneyEventTick());
+        PlayerPrefs.SetFloat("PetBonus", _petBonus);
+        
     }
-    private double RoundCurrentValue() {return Math.Round(_currentValue, 1);}
+    private string RoundCurrentValue() {return Convert.ToString(Math.Round(_currentValue, 1));}
 
     IEnumerator UpdateMoneyEventTick()
     {
         while(true)
         {
             _currentValue += _petBonus;
-            _moneyText.text = Convert.ToString(RoundCurrentValue());
+            _moneyText.text = RoundCurrentValue();
             yield return new WaitForSeconds(1);
         }
+    }
+    IEnumerator SaveEvent()
+    {
+        while(true)
+        {
+            SaveCurrentMoney();
+            yield return new WaitForSeconds(10);
+        }
+    }
+    private void SaveCurrentMoney()
+    {
+        PlayerPrefs.SetFloat("Money", _currentValue);
     }
 }
