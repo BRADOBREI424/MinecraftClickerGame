@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 
 public class Money : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Money : MonoBehaviour
         Upgrade.SetBonus += SetUpgradeBonus;
         Pet.Purchase += DecreaseMoney;
         Pet.SetBonus += SetPetBonus;
+        Reward.WatchAd += GetBonusMoney;
     }
     private void OnDisable() {
         Block.DestroyBlock -= GetMoney;
@@ -38,6 +40,7 @@ public class Money : MonoBehaviour
         Upgrade.SetBonus -= SetUpgradeBonus;
         Pet.Purchase -= DecreaseMoney;
         Pet.SetBonus -= SetPetBonus;
+        Reward.WatchAd -= GetBonusMoney;
     }
 
     public void GetMoney(int DestroyedBlock)
@@ -67,14 +70,23 @@ public class Money : MonoBehaviour
                 _currentValue += 20 + _upgradeBonus;
             }
             _moneyText.text = RoundCurrentValue();
+            SaveCurrentMoney();
+    }
+
+    private void GetBonusMoney(float bonus)
+    {
+        _currentValue += bonus;
+        _moneyText.text = RoundCurrentValue();
     }
 
     private void DecreaseMoney(float cost)
     {
-        _currentValue -= cost;
-        _moneyText.text = RoundCurrentValue();
-        SaveCurrentMoney();
+            _currentValue -= cost;
+            _moneyText.text = RoundCurrentValue();
+            SaveCurrentMoney();
+        
     }
+
     private void SetUpgradeBonus(float bonus)
     {
         _upgradeBonus += bonus;

@@ -68,6 +68,7 @@
     <Compile Include="Assets/YandexGame/ScriptsYG/Language/LangYGAdditionalText.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/ForVisualScriptYG.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/Payments/ConsumePurchasesYG.cs" />
+    <Compile Include="Assets/Scripts/Reward.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/Scripts/Shop.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/Language/UtilsLang.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/ReviewYG.cs" />
+    <Compile Include="Assets/Scripts/Orientation.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/Storage/Storage_yg.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01_UGUI.cs" />
     <Compile Include="Assets/Scripts/Pets/Pet.cs" />
@@ -119,6 +121,7 @@
     <Compile Include="Assets/YandexGame/WorkingData/SavesYG.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/ActivityOnAuthorizationYG.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark02.cs" />
+    <Compile Include="Assets/Scripts/Upgrades/UpgradeMultiple.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/GameReadyAPI/GRA_yg.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
     <Compile Include="Assets/YandexGame/ScriptsYG/ImageLoadYG.cs" />

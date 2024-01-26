@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Chiken
+  - UpgradeCount
   layers:
   - Default
   - TransparentFX
